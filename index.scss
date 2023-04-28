@@ -20,6 +20,13 @@
 @mixin text {
   font-family: 'Playfair Display', serif;
 }
+
+
+@font-face {
+  font-family: sezim;
+  src: url(./font/Gamaleon.ttf);
+}
+
 body {
   max-width: 500px;
   width: 100%;
@@ -47,11 +54,14 @@ span {
 
   }
   img {
-
+    
   }
   h2 {
-    @include cursive();
+    // @include cursive();
     font-size: 55px;
+    font-family: sezim;
+    font-weight: 100;
+    margin: 10px auto;
   }
   p {
     font-size: 20px;
@@ -79,16 +89,21 @@ span {
 .dearGuest {
   padding:  20vh 0;
   width: 100%;
-  background: #e7bea0;
+  // background: #e7bea0;
+  background-image: url(./images/guest.JPEG);
+  background-size: cover;
   text-align: center;
-  img {
-    width: 100px;
-  }
-  p {
-    width: 80%;
-    margin: 10px auto;
-    font-weight: bold;
-    @include text
+  // filter: blur(2px);
+  &--blur {
+    img {
+      width: 100px;
+    }
+    p {
+      width: 80%;
+      margin: 10px auto;
+      font-weight: bold;
+      @include text
+    }
   }
 }
 .inviteYouBlock {
@@ -120,7 +135,7 @@ span {
   }
 }
 .guestMessage {
-  background-image: url(./images/guestMessage.JPG);
+  background-image: url(./images/guestMessage.JPEG);
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -171,6 +186,7 @@ span {
         border: none;
         padding: 10px 0;
         background: #000;
+        color: #fff;
       }
      }
   }
