@@ -3,10 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
 
-@mixin roboto {
-  font-family: 'Roboto', sans-serif;
+@mixin motserat {
+  font-family: 'Montserrat', sans-serif;
 }
 @mixin cursive {
   font-family: 'Dancing Script', cursive;
@@ -20,11 +21,13 @@
 @mixin text {
   font-family: 'Playfair Display', serif;
 }
-
-
 @font-face {
   font-family: sezim;
   src: url(./font/Gamaleon.ttf);
+}
+@font-face {
+  font-family: text;
+  src: url(./font/RomanD.ttf);
 }
 
 body {
@@ -34,7 +37,7 @@ body {
   text-align: center;
 }
 p {
-  @include text();
+  @include motserat();
 }
 img {
   width: 100%;
@@ -50,21 +53,33 @@ span {
   @include time()
 }
 .invitationBlock {
-  h1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/invitation.JPG);
+  background-size: cover;
+  position: relative;
+  // h1 {
 
-  }
-  img {
-    
-  }
-  h2 {
-    // @include cursive();
-    font-size: 55px;
-    font-family: sezim;
-    font-weight: 100;
-    margin: 10px auto;
-  }
-  p {
-    font-size: 20px;
+  // }
+  &--text {
+    width: 70%;
+    left: 15%;
+    top: 60%;
+    position: absolute;
+    h2 {
+      // @include cursive();
+      width: 100%;
+      color: #fff;
+      font-size: 45px;
+      font-family: sezim;
+      font-weight: 100;
+      margin: 10px auto;
+    }
+    p {
+      color: #fff;
+      font-size: 20px;
+    }
+
   }
 }
 .quoteBlock{
@@ -74,63 +89,95 @@ span {
   height: 100vh;
   position: relative;
   p {
-    width: 70%;
-    left: 15%;
+    font-family: text;
+    width: 85%;
     top: 50%;
+    left: 7%;
+    // margin-top: 30vh;
+    margin: 0 auto;
     position: absolute;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 13px;
     padding: 10px;
     border-radius: 15px;
-    font-size: 18px;
-    background: #d3a27f;
+    backdrop-filter: blur(4px);
+    background: #aaaaaa80;
+    color: #161616;
   }
 }
 .dearGuest {
   padding:  20vh 0;
   width: 100%;
-  // background: #e7bea0;
-  background-image: url(./images/guest.JPEG);
-  background-size: cover;
   text-align: center;
-  // filter: blur(2px);
+  z-index: 0;
+  position: relative;
+  .dear-img {
+    border-radius: 30px;
+    height: 200px;
+
+  }
   &--blur {
-    img {
-      width: 100px;
+    top: 35%;
+    position: absolute;
+    z-index: 1;
+    @include motserat;
+    
+    h2 {
+      font-weight: 400;
     }
     p {
+      @include motserat;
       width: 80%;
       margin: 10px auto;
-      font-weight: bold;
-      @include text
+      font-weight: 300;
+      letter-spacing: 1px;
     }
   }
 }
 .inviteYouBlock {
-  h4 {
-    text-transform: uppercase;
-    font-weight: normal;
-  }
-  h3 {
-    @include text();
-    font-size: 24px;
-  }
-  h2 {
-    
-  }
-  div {
-    margin-bottom: 50px;
-    span {
-      font-size: 24px;
-      font-weight: 100;
-    }
+  width: 100%; 
+  // height: 120vh;
+  margin: 20px auto;
+  background-image: url(./images/inviteYou.JPG);
+  background-size: cover;
+  padding: 5vh 0;
+  &--text {
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    background: #ffffff5d;
     h4 {
-      margin: 10px auto;
-      font-weight: bold;
+      text-transform: uppercase;
+      font-weight: normal;
+
+      @include motserat();
     }
-    p {
-      margin: 0 auto;
+    h3 {
+      @include motserat();
+      font-size: 24px;
+    }
+    h2 {
+      @include motserat();
       
+    }
+    div {
+      margin-bottom: 50px;
+      span {
+        @include motserat();
+        font-size: 24px;
+        font-weight: 100;
+      }
+      h4 {
+        margin: 10px auto;
+        font-weight: bold;
+      }
+      p {
+        margin: 0 auto;
+        
+      }
     }
   }
 }
@@ -141,53 +188,75 @@ span {
   position: relative;
   div {
     width: 90%;
-    background: #fff;
+    background: #ffffff94;
+    backdrop-filter: blur(10px);
     position: absolute;
     border-radius: 25px;
     left: 5%;
-    top: 20%;
-    h2 {
+    top: 40%;
+    padding: 30px 0;
+    // h2 {
       
-    }
+    // }
     p {
-      
+      &:first-child {
+        width: 80%;
+        margin: 20px auto;
+      }
+    }
+    i{
+
+      @include motserat;
+      text-transform: lowercase;
+      font-weight: 300;
+      // font-family: sezim;
     }
   }
 }
 .guestForm {
   width: 100%;
-  background-image: url(./images/guestForm.JPG);
+  background-image: url(./images/inviteYou.JPG);
   background-size: cover;
   height: 100vh;
-  position: relative;
-  &--textWrapper {
-    background: #d1a585;
-    width: 70%;
-    position: absolute;
-    padding: 10px;
-    top: 60%;
-    left: 15%;
-    border: 1px solid #a17c61;
-    border-radius: 25px;
-     form {
-      width: inherit;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      input {
-        margin-bottom: 5px;
-        padding: 5px 15px;
-        height: 20px;
-        font-size: 14px;
-      }
-      button {
-        font-size: 16px;
-        border-radius: 15px;
-        border: none;
-        padding: 10px 0;
-        background: #000;
-        color: #fff;
-      }
-     }
+  padding: 40px 0;
+  
+}
+.guestForm--textWrapper {
+  background: #ffffff7a;
+  width: 70%;
+  padding: 40px;
+  margin: 10vh auto;
+  // padding: 30px;
+  border: 1px solid #dbbca75b;
+  border-radius: 25px;
+  h2 {
+    @include motserat()
   }
+  p {
+    @include motserat();
+    width: 80%;
+    margin: 10px auto;
+  }
+  form {
+     @include motserat();
+    width: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    input {
+      margin-bottom: 5px;
+      padding: 5px 15px;
+      height: 20px;
+      font-size: 14px;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 16px;
+      border-radius: 15px;
+      border: none;
+      padding: 10px 0;
+      background: #000;
+      color: #fff;
+    }
+   }
 }

@@ -25,5 +25,6 @@ form.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(obj)
   })
-  confirm('ваш ответ записан!!!!')
+  confirm('ваш ответ записан')
+
 })

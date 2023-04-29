@@ -3,9 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 @font-face {
   font-family: sezim;
   src: url(./font/Gamaleon.ttf);
+}
+@font-face {
+  font-family: text;
+  src: url(./font/RomanD.ttf);
 }
 body {
   max-width: 500px;
@@ -15,7 +20,7 @@ body {
 }
 
 p {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 img {
@@ -32,13 +37,29 @@ span::after {
   content: "-";
 }
 
-.invitationBlock h2 {
-  font-size: 55px;
+.invitationBlock {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/invitation.JPG);
+  background-size: cover;
+  position: relative;
+}
+.invitationBlock--text {
+  width: 70%;
+  left: 15%;
+  top: 60%;
+  position: absolute;
+}
+.invitationBlock--text h2 {
+  width: 100%;
+  color: #fff;
+  font-size: 45px;
   font-family: sezim;
   font-weight: 100;
   margin: 10px auto;
 }
-.invitationBlock p {
+.invitationBlock--text p {
+  color: #fff;
   font-size: 20px;
 }
 
@@ -50,55 +71,92 @@ span::after {
   position: relative;
 }
 .quoteBlock p {
-  width: 70%;
-  left: 15%;
+  font-family: text;
+  width: 85%;
   top: 50%;
+  left: 7%;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 13px;
   padding: 10px;
   border-radius: 15px;
-  font-size: 18px;
-  background: #d3a27f;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  background: rgba(170, 170, 170, 0.5019607843);
+  color: #161616;
 }
 
 .dearGuest {
   padding: 20vh 0;
   width: 100%;
-  background-image: url(./images/guest.JPEG);
-  background-size: cover;
   text-align: center;
+  z-index: 0;
+  position: relative;
 }
-.dearGuest--blur img {
-  width: 100px;
+.dearGuest .dear-img {
+  border-radius: 30px;
+  height: 200px;
+}
+.dearGuest--blur {
+  top: 35%;
+  position: absolute;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+}
+.dearGuest--blur h2 {
+  font-weight: 400;
 }
 .dearGuest--blur p {
+  font-family: "Montserrat", sans-serif;
   width: 80%;
   margin: 10px auto;
-  font-weight: bold;
-  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
-.inviteYouBlock h4 {
+.inviteYouBlock {
+  width: 100%;
+  margin: 20px auto;
+  background-image: url(./images/inviteYou.JPG);
+  background-size: cover;
+  padding: 5vh 0;
+}
+.inviteYouBlock--text {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.3647058824);
+}
+.inviteYouBlock--text h4 {
   text-transform: uppercase;
   font-weight: normal;
+  font-family: "Montserrat", sans-serif;
 }
-.inviteYouBlock h3 {
-  font-family: "Playfair Display", serif;
+.inviteYouBlock--text h3 {
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
 }
-.inviteYouBlock div {
+.inviteYouBlock--text h2 {
+  font-family: "Montserrat", sans-serif;
+}
+.inviteYouBlock--text div {
   margin-bottom: 50px;
 }
-.inviteYouBlock div span {
+.inviteYouBlock--text div span {
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 100;
 }
-.inviteYouBlock div h4 {
+.inviteYouBlock--text div h4 {
   margin: 10px auto;
   font-weight: bold;
 }
-.inviteYouBlock div p {
+.inviteYouBlock--text div p {
   margin: 0 auto;
 }
 
@@ -110,30 +168,51 @@ span::after {
 }
 .guestMessage div {
   width: 90%;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5803921569);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   position: absolute;
   border-radius: 25px;
   left: 5%;
-  top: 20%;
+  top: 40%;
+  padding: 30px 0;
 }
+.guestMessage div p:first-child {
+  width: 80%;
+  margin: 20px auto;
+}
+.guestMessage div i {
+  font-family: "Montserrat", sans-serif;
+  text-transform: lowercase;
+  font-weight: 300;
+}
+
 .guestForm {
   width: 100%;
-  background-image: url(./images/guestForm.JPG);
+  background-image: url(./images/inviteYou.JPG);
   background-size: cover;
   height: 100vh;
-  position: relative;
+  padding: 40px 0;
 }
+
 .guestForm--textWrapper {
-  background: #d1a585;
+  background: rgba(255, 255, 255, 0.4784313725);
   width: 70%;
-  position: absolute;
-  padding: 10px;
-  top: 60%;
-  left: 15%;
-  border: 1px solid #a17c61;
+  padding: 40px;
+  margin: 10vh auto;
+  border: 1px solid rgba(219, 188, 167, 0.3568627451);
   border-radius: 25px;
 }
+.guestForm--textWrapper h2 {
+  font-family: "Montserrat", sans-serif;
+}
+.guestForm--textWrapper p {
+  font-family: "Montserrat", sans-serif;
+  width: 80%;
+  margin: 10px auto;
+}
 .guestForm--textWrapper form {
+  font-family: "Montserrat", sans-serif;
   width: inherit;
   margin: 0 auto;
   display: flex;
@@ -144,6 +223,7 @@ span::after {
   padding: 5px 15px;
   height: 20px;
   font-size: 14px;
+  border-radius: 10px;
 }
 .guestForm--textWrapper form button {
   font-size: 16px;
