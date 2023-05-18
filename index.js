@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
     partner: `${inputPartner.value}`
   }
   console.log(obj);
-  fetch('https://636a27e5b10125b78fd2189a.mockapi.io/todo', {
+  fetch('https://64662253228bd07b355c9c1c.mockapi.io/wedding', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
